@@ -49,6 +49,7 @@ end
   def self.find_by_id(id)
     sql = <<-SQL
     SELECT * FROM dogs WHERE id = ? LIMIT 1
+    SQL
     new_dog = DB[:conn].execute("FIND BY id WHERE id = ?", [id])[0][0]
    
     new_dog = self.new(id:id, name:name, breed:breed)
