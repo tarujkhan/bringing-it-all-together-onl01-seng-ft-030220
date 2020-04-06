@@ -22,7 +22,7 @@ class Dog
   end 
   
   def self.drop_table
-    sql = "DROP TABLE dogs IF EXISTS"
+    sql = "DROP TABLE dogs"
     DB[:conn].execute(sql)
   end 
   
