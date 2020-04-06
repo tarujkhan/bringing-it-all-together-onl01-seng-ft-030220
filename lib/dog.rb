@@ -33,8 +33,8 @@ end
     DB[:conn].execute(sql)
   end 
   
-  def self.create(name, breed)
-    new_dog = self.new(name, breed)
+  def self.create(name:, breed:)
+    new_dog = self.new(name:, breed:)
     new_dog.save
     new_dog
   end 
