@@ -18,7 +18,7 @@ class Dog
     sql = <<-SQL
     INSERT INTO dogs (id, name, breed) VALUES (?, ?, ?)
     SQL
-    new_dog = self.new(id, name, breed)
+    new_dog = self.create(name, breed)
     new_dog
     DB[:conn].execute(sql, self.id, self.name, self.breed)
   end 
