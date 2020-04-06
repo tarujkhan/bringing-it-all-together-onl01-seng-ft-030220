@@ -20,7 +20,7 @@ class Dog
     SQL
    
     DB[:conn].execute(sql, self.name, self.breed)
-    @id = 
+    @id = DB[:conn].execute(SELECT last_insert_row_id)
   end 
   
   def self.drop_table
