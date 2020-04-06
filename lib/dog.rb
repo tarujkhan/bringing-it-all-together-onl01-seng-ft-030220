@@ -17,6 +17,7 @@ class Dog
   def save
     if self.id 
       self.update
+    else 
     sql = <<-SQL
     INSERT INTO dogs (name, breed) VALUES (?, ?)
     SQL
@@ -25,7 +26,7 @@ class Dog
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
     self
   end 
-  
+end 
   def self.drop_table
     sql = "DROP TABLE dogs"
     DB[:conn].execute(sql)
