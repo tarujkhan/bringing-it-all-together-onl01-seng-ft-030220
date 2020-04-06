@@ -50,7 +50,8 @@ end
     sql = <<-SQL
     SELECT * FROM dogs WHERE id = ? LIMIT 1
     SQL
-    new_dog = DB[:conn].execute(sql,id)
+    new_dog = DB[:conn].execute(sql,id).map do |row|
+      self.new_from_db
     binding.pry
    end 
   
