@@ -61,7 +61,7 @@ end
       dog_data = new_dog[0]
       new_dog = self.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
     else 
-      new_dog = self.create(name:, breed:)
+      new_dog = self.create(name:name, breed:breed)
     end 
     new_dog
   end 
