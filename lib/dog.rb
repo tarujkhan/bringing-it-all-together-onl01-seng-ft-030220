@@ -47,10 +47,10 @@ end
   end 
   
   def self.find_by_id(id)
+    sql = <<-SQL
+    
     new_dog = DB[:conn].execute("FIND BY id WHERE id = ?", [id])[0][0]
-    id = new_dog[0]
-    name = new_dog[1]
-    breed = new_dog[2]
+   
     new_dog = self.new(id:id, name:name, breed:breed)
   end 
   
